@@ -1,0 +1,47 @@
+.glyphicon {
+	font-size: 24px;
+}
+
+.song-tabs {
+	.active{
+		background-color: rgba(255,0,0,0.2);
+		width: 14px;
+		height:12px;
+	}
+	.superActive {
+		background-color: rgba(255,0,0,0.4);
+		width: 14px;
+		height:12px;
+	}
+	.bar {
+		border-right: 1px dashed black
+	}
+	.tab-line {
+		.duration {
+			display: inline-block;
+			box-sizing: border-box;
+			width: 14px;
+			margin: 0 auto;
+			font-size: 10px;
+			text-align: center;
+		}
+		.row {
+			@include clearfix;
+		}
+		.string {
+			float: left;
+			width: 14px;
+		}
+		.strikeout {
+			float: left;
+			width: 14px;
+			height:20px;
+			text-align: center;
+			font-color: grey;
+		}
+		span {
+			font-size: 8px;
+			z-index: 5;
+		}
+	}
+}

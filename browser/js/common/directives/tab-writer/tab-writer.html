@@ -1,0 +1,21 @@
+<div class="song-tabs" tableData="{{tableData}}">
+	<div class="tab-line">
+		<div class="duration" ng-repeat="col in tableData[0]" ng-class="{active: col.active}">{{hashDuration(col.duration)}}</div>
+		<div class="row" ng-repeat="row in tableData">
+			<div class="string">{{notes[$index]}}</div>
+ 			<div ng-repeat="col in row" ng-click="setActive(col, $index)" ng-class="{active: col.active, superActive: col.superActive && col.active, bar: col.bar}" class="strikeout">-<span>{{col.fret}}</span>-</div>
+		</div>
+	</div>
+	<form class="toolbar" ng-submit="edit()">
+		<span>Enter Fret Number</span> <input type="text" ng-model="fretter">
+		<button type="button" class="btn btn-primary" ng-click="addDuration(1)">Whole</button>
+		<button type="button" class="btn btn-primary" ng-click="addDuration(2)">Half</button>
+		<button type="button" class="btn btn-primary" ng-click="addDuration(4)">Quarter</button>
+		<button type="button" class="btn btn-primary" ng-click="addDuration(8)">Eighth</button>
+		<button type="button" class="btn btn-primary" ng-click="addDuration(16)">Sixteenth</button>
+		<button type="button" class="btn btn-primary" ng-click="addDuration(32)">Thirty-Second</button>
+		<button type="button" class="btn btn-primary" ng-click="addDuration()">Rest</button>
+		<button type="button" class="btn btn-danger" ng-click="toggleBar()">End Measure</button>
+	</form>
+</div>
+

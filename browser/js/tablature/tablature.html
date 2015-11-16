@@ -1,0 +1,15 @@
+<h1>Let's make a song!</h1>
+
+<span>Song Name: </span><input ng-model="song.name"> <br>
+<span>Written By:   </span><input ng-model="song.artist"> <br>
+
+<h2>{{song.name}}</h2>
+<h4>{{song.artist}}</h4>
+
+<span>bpm</span> <input type="number" ng-model="song.tempo" min="1" max="400" value="120">
+<span class="glyphicon glyphicon-play" ng-click="play()"></span>
+<div id="tablature">
+	<tab-writer></tab-writer>
+</div>
+<button type="button" class="btn btn-default" ng-click="addRow()">Add Row</button>
+<button type="button" class="btn btn-default" ng-click="removeRow()" ng-hide="numLines<1">Remove Row</button>
