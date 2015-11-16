@@ -75,6 +75,7 @@ app.directive('tabWriter', function($document, $compile, $rootScope) {
 	  				e.preventDefault()
 	  				scope.setActive(scope.tableData[rowIndex+1][colIndex], colIndex)
 	  				scope.$digest()
+	  				e.stopPropagation()
 	  			}
 	  			else if (e.which === 8) {
 	  				e.preventDefault()
